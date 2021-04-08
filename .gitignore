@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# Assignments
+CPP_Learning_Project/Assignments/*
