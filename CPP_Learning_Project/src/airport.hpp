@@ -17,7 +17,7 @@ private:
     float m_ordered_fuel = 0.f;
     int m_next_refill_time = 0;
 
-    const AircraftManager& _aircraft_manager;
+    const AircraftManager& m_aircraft_manager;
 
     // reserve a terminal
     // if a terminal is free, return
@@ -56,7 +56,7 @@ private:
             return;
         }
         
-        float required_fuel = _aircraft_manager.get_required_fuel();
+        float required_fuel = m_aircraft_manager.get_required_fuel();
         if(required_fuel > m_fuel_stock)
         {
             required_fuel -= m_fuel_stock;
@@ -75,7 +75,7 @@ public:
         m_texture { image },
         m_terminals { m_type.create_terminals() },
         m_tower { *this },
-        _aircraft_manager { aircraft_manager_ }
+        m_aircraft_manager { aircraft_manager_ }
     {
         GL::display_queue.emplace_back(this);
         GL::move_queue.emplace(this);

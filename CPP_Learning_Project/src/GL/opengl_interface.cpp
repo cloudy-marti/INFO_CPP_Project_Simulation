@@ -68,7 +68,6 @@ void display(void)
     {
         item->display();
     }
-    //AircraftManager::GetInstance()->display_aircrafts();
     glDisable(GL_TEXTURE_2D);
     glutSwapBuffers();
 }
@@ -78,16 +77,12 @@ void display(void)
 std::chrono::time_point<std::chrono::_V2::system_clock, std::chrono::_V2::system_clock::duration> current_time;
 void timer(const int step)
 {
-    // AircraftManager* aircraft_manager = AircraftManager::GetInstance();
-
     auto start_time = std::chrono::system_clock::now();
     std::chrono::duration<float> dDelta_time = (start_time - current_time);
     std::chrono::milliseconds mDelta_time = std::chrono::duration_cast<std::chrono::milliseconds>(dDelta_time);
 
     float delta_time = mDelta_time.count()/1000.f * sim_speed;
 
-    // aircraft_manager->move(delta_time);
-    // for (auto& item : move_queue)
     for(auto it = move_queue.begin(); it != move_queue.end(); ++it)
     {
         auto& dynamic_item = *it;

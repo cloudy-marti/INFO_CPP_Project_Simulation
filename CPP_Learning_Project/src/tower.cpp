@@ -29,7 +29,6 @@ WaypointQueue Tower::get_instructions(Aircraft& aircraft)
     else
     {
         // get a path for the craft to start
-        // const auto it = find_craft_and_terminal(aircraft);
         const auto it = m_reserved_terminals.find(&aircraft);
         assert(it != m_reserved_terminals.end());
         const auto terminal_num = it->second;

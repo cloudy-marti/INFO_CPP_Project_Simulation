@@ -1,4 +1,3 @@
-// #include "stdafx.h"
 #include "aircraft_factory.hpp"
 
 [[nodiscard]] std::unique_ptr<Aircraft> AircraftFactory::create_aircraft(const AircraftType& type, Tower& tower)
