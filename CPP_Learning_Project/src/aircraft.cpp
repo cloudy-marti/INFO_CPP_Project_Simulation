@@ -12,7 +12,7 @@ void Aircraft::turn_to_waypoint(double delta_time)
             target += W;
         }
 
-        auto direction = (target - m_pos)*(1.f/delta_time);
+        Point3D direction = (target - m_pos)*(1.f/delta_time);
         turn(direction - m_speed);
     }
 }
